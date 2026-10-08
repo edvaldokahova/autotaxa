@@ -86,6 +86,7 @@
     const last = i === N - 1;
     hint.classList.toggle('off', last);
     cta.classList.toggle('show', last);
+    document.body.classList.toggle('cta-on', last);
     clearTimeout(timer);
     timer = setTimeout(step, MIN_DWELL);
   }

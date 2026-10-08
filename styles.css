@@ -7,10 +7,16 @@
 }
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+html{background:#0b1a22;color-scheme:dark;overscroll-behavior-y:none}
 body{
   font-family:'Outfit',system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
-  background:radial-gradient(1200px 600px at 50% -10%,#16414f 0%,var(--bg) 60%) fixed;
+  background:transparent;
   color:var(--txt);line-height:1.5;min-height:100vh;
+}
+/* fundo em camada fixa própria: evita a barra branca ao rolar depressa no telemóvel */
+body::before{
+  content:'';position:fixed;inset:0;z-index:-1;pointer-events:none;
+  background:radial-gradient(1200px 600px at 50% -10%,#16414f 0%,#0b1a22 60%);
 }
 img,video{max-width:100%;display:block}
 a{color:inherit}
@@ -141,11 +147,13 @@ h1 .soft{color:var(--teal)}
 .back{display:inline-block;margin-bottom:18px;color:var(--teal);text-decoration:none;font-weight:600}
 
 /* ---------- FOOTER ---------- */
-.site-footer{border-top:1px solid var(--line);margin-top:40px;padding:26px 0 150px;text-align:center;color:var(--mut);font-size:.8rem}
+.site-footer{border-top:1px solid var(--line);margin-top:28px;padding:22px 0 24px;text-align:center;color:var(--mut);font-size:.8rem}
 .site-footer nav{display:flex;justify-content:center;gap:18px;margin-bottom:12px;flex-wrap:wrap}
 .site-footer nav a{color:var(--txt);text-decoration:none;font-weight:600}
 .site-footer nav a:hover{color:var(--teal)}
 .site-footer p{max-width:520px;margin:6px auto}
+/* espaço extra só enquanto o cartão de CTA fixo está visível */
+body.cta-on .site-footer{padding-bottom:150px}
 
 /* ---------- ANIMAÇÕES ---------- */
 @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(250,204,21,.65)}70%{box-shadow:0 0 0 22px rgba(250,204,21,0)}100%{box-shadow:0 0 0 0 rgba(250,204,21,0)}}

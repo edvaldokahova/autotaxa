@@ -1,5 +1,5 @@
 (() => {
-  const UNLOCK_AT = 203; // 3:23 em segundos
+  const UNLOCK_AT = 194; // 3:14 em segundos
   const KEY = 'autotaxa_unlocked';
 
   const $ = (id) => document.getElementById(id);

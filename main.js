@@ -73,33 +73,55 @@
   });
 
   /* ---------- PROVAS: troca de imagens ao rolar ---------- */
+  const sticky = track.firstElementChild;
+  const MIN_DWELL = 500; // ms mínimos que cada print fica no ecrã
   let current = -1;
+  let target = 0;
+  let timer = null;
 
-  function show(i) {
-    if (i === current) return;
+  function render(i) {
     current = i;
     imgs.forEach((im, k) => im.classList.toggle('on', k === i));
     dots.forEach((d, k) => d.classList.toggle('on', k === i));
     const last = i === N - 1;
     hint.classList.toggle('off', last);
     cta.classList.toggle('show', last);
+    clearTimeout(timer);
+    timer = setTimeout(step, MIN_DWELL);
+  }
+
+  // Avança no máximo 1 print de cada vez, para nenhum ser "saltado"
+  function step() {
+    timer = null;
+    if (current === target) return;
+    render(current + (target > current ? 1 : -1));
+  }
+
+  function goTo(t) {
+    target = t;
+    if (current === -1 || (!timer && current !== target)) step();
+  }
+
+  function reset() {
+    target = 0;
+    if (current !== 0) render(0);
   }
 
   function onScroll() {
     if (!unlocked) return;
     const r = track.getBoundingClientRect();
-    const total = track.offsetHeight - window.innerHeight;
+    const total = track.offsetHeight - sticky.offsetHeight;
     const inView = r.top < window.innerHeight * 0.6;
 
     // Shortcut some quando a secção já está à vista
     shortcut.classList.toggle('show', r.top > window.innerHeight * 0.6);
 
-    if (!inView) { show(0); cta.classList.remove('show'); return; }
+    if (!inView) { reset(); return; }
     const p = Math.min(1, Math.max(0, -r.top / total));
-    show(Math.min(N - 1, Math.floor(p * N)));
+    goTo(Math.round(p * (N - 1)));
   }
 
   window.addEventListener('scroll', onScroll, { passive: true });
   window.addEventListener('resize', onScroll);
-  show(0);
+  render(0);
 })();

@@ -1,9 +1,9 @@
 (() => {
-  const UNLOCK_AT = 194; // 3:14 em segundos
+  const UNLOCK_AT = 147; // 3:14 em segundos
   const KEY = 'autotaxa_unlocked';
 
   /* ---- Barra de prova social (número simulado, sem servidor) ---- */
-  const BAR_AT = 155;          // segundo do vídeo em que a barra aparece
+  const BAR_AT = 156;          // segundo do vídeo em que a barra aparece
   const $ = (id) => document.getElementById(id);
   const video = $('vslVideo');
   const soundBtn = $('soundBtn');

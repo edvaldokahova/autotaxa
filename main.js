@@ -1,7 +1,9 @@
 (() => {
-  const UNLOCK_AT = 170; // 3:14 em segundos
+  const UNLOCK_AT = 194; // 3:14 em segundos
   const KEY = 'autotaxa_unlocked';
 
+  /* ---- Barra de prova social (número simulado, sem servidor) ---- */
+  const BAR_AT = 155;          // segundo do vídeo em que a barra aparece
   const $ = (id) => document.getElementById(id);
   const video = $('vslVideo');
   const soundBtn = $('soundBtn');
@@ -15,7 +17,32 @@
   const cta = $('ctaCard');
   const N = imgs.length;
 
+  const bar2 = $('liveBar');
+  const barNum = $('liveNum');
   $('year').textContent = new Date().getFullYear();
+
+  /* ---------- BARRA DE PROVA SOCIAL ---------- */
+  // Número que sobe ao longo do dia e muda de visitante para visitante (não é um contador real).
+  function fakeCount() {
+    const d = new Date();
+    const day = d.getFullYear() * 1000 + d.getMonth() * 40 + d.getDate();
+    const seed = (day * 9301 + 49297) % 233280 / 233280;       // varia por dia
+    const hour = d.getHours() + d.getMinutes() / 60;
+    const base = 12 + hour * 2.6 + seed * 14;                  // cresce durante o dia
+    return Math.round(base + (Math.random() * 6 - 3));          // variação por visitante
+  }
+  let barShown = false;
+  function wantBar() {
+    if (barShown || !bar2) return;
+    barShown = true;
+    let n = fakeCount();
+    barNum.textContent = n;
+    bar2.hidden = false;
+    document.body.classList.add('bar-on');
+    (function tick() {            // de vez em quando sobe +1 enquanto a pessoa está na página
+      setTimeout(() => { n += 1; barNum.textContent = n; tick(); }, 20000 + Math.random() * 40000);
+    })();
+  }
 
   /* ---------- VSL ---------- */
   let soundOn = false;
@@ -47,6 +74,7 @@
     const t = video.currentTime;
     if (t > maxTime) maxTime = t;
     if (video.duration) bar.style.width = (t / video.duration) * 100 + '%';
+    if (t >= BAR_AT && (soundOn || unlocked)) wantBar();
     if (soundOn && t >= UNLOCK_AT) unlock(false);
   });
 
@@ -58,6 +86,7 @@
   function unlock(restored) {
     if (unlocked) return;
     unlocked = true;
+    wantBar();
     section.hidden = false;
     shortcut.hidden = false;
     requestAnimationFrame(() => shortcut.classList.add('show'));

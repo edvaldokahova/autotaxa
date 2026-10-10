@@ -40,7 +40,7 @@ h1 .soft{color:var(--teal)}
 /* ---------- VSL ---------- */
 .vsl{
   position:relative;width:min(100%,400px);aspect-ratio:9/16;margin:0 auto;
-  border-radius:5px;overflow:hidden;background:#000;
+  border-radius:18px;overflow:hidden;background:#000;
   border:1px solid var(--line);box-shadow:0 20px 60px rgba(0,0,0,.55),0 0 0 4px rgba(20,184,166,.12);
 }
 .vsl video{width:100%;height:100%;object-fit:cover;cursor:pointer}
@@ -160,3 +160,8 @@ body.cta-on .site-footer{padding-bottom:150px}
 @keyframes glow{0%,100%{box-shadow:0 8px 24px rgba(34,197,94,.35)}50%{box-shadow:0 8px 34px rgba(34,197,94,.7)}}
 @keyframes nudge{0%,100%{transform:translate(-50%,0)}50%{transform:translate(-50%,-5px)}}
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+
+/* ---------- BARRA DE PROVA SOCIAL ---------- */
+.live-bar{position:fixed;top:0;left:0;right:0;z-index:60;background:var(--danger);color:#2b0505;text-align:center;font-weight:800;padding:9px 12px;font-size:.88rem;letter-spacing:.01em;animation:barIn .5s ease}
+body.bar-on{padding-top:44px}
+@keyframes barIn{from{transform:translateY(-100%)}to{transform:none}}

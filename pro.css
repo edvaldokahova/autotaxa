@@ -94,7 +94,7 @@ details p{padding:0 14px 14px;color:#33493c;font-size:.93rem}
 .pricetag .old{display:inline-block;position:relative;color:var(--navy);font-size:1.7rem;margin-top:14px;line-height:1}
 .pricetag .old::after{content:'';position:absolute;left:-4px;right:-4px;top:52%;height:3px;background:var(--red);transform:rotate(-6deg);border-radius:2px}
 .pricetag .old small{font-size:.5em;font-weight:800;margin-left:3px}
-.pricetag .now{display:block;color:var(--red);font-size:clamp(2.6rem,13vw,3.6rem);line-height:1;margin-top:6px}
+.pricetag .now{display:block;color:#0b6b36;font-size:clamp(2.6rem,13vw,3.6rem);line-height:1;margin-top:6px}
 .pricetag .now small{font-size:.38em;margin-left:4px}
 .pricetag .note{display:block;font-family:'Inter',sans-serif;font-size:.74rem;font-weight:600;color:var(--mut);margin-top:6px}
 .tagwrap{text-align:center;margin:18px 0 6px}

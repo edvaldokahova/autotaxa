@@ -55,10 +55,10 @@
   <h2>Espreite <span>por dentro</span></h2>
   <p class="lead">Tabelas com números oficiais, avisos, exercícios para preencher e checklists.</p>
   <div class="carousel pages">
-    <figure><img src="assets/v2/wb-custo.webp" alt="Módulo 2: Quanto vai custar de verdade" loading="lazy"><figcaption>Módulo 2 · Os custos</figcaption></figure>
-    <figure><img src="assets/v2/wb-burla.webp" alt="Módulo 3: Onde comprar e em quem confiar" loading="lazy"><figcaption>Módulo 3 · Fornecedores e burlas</figcaption></figure>
-    <figure><img src="assets/v2/wb-antt.webp" alt="Módulo 4: Autorização, pagamento e embarque" loading="lazy"><figcaption>Módulo 4 · Autorização e embarque</figcaption></figure>
-    <figure><img src="assets/v2/wb-plano.webp" alt="Folha de trabalho: o seu plano de importação" loading="lazy"><figcaption>O seu plano de importação</figcaption></figure>
+    <figure><div class="lock"><img src="assets/v2/wb-custo-p.webp" alt="Módulo 2: Quanto vai custar de verdade" loading="lazy" draggable="false"><div class="veil"><span class="lk">🔒 Resto da página bloqueado</span><div class="slide" role="button" tabindex="0" aria-label="Deslize para desbloquear"><i></i><span>Deslize para desbloquear</span></div></div></div><figcaption>Módulo 2 · Os custos</figcaption></figure>
+    <figure><div class="lock"><img src="assets/v2/wb-burla-p.webp" alt="Módulo 3: Onde comprar e em quem confiar" loading="lazy" draggable="false"><div class="veil"><span class="lk">🔒 Resto da página bloqueado</span><div class="slide" role="button" tabindex="0" aria-label="Deslize para desbloquear"><i></i><span>Deslize para desbloquear</span></div></div></div><figcaption>Módulo 3 · Fornecedores e burlas</figcaption></figure>
+    <figure><div class="lock"><img src="assets/v2/wb-antt-p.webp" alt="Módulo 4: Autorização, pagamento e embarque" loading="lazy" draggable="false"><div class="veil"><span class="lk">🔒 Resto da página bloqueado</span><div class="slide" role="button" tabindex="0" aria-label="Deslize para desbloquear"><i></i><span>Deslize para desbloquear</span></div></div></div><figcaption>Módulo 4 · Autorização e embarque</figcaption></figure>
+    <figure><div class="lock"><img src="assets/v2/wb-plano-p.webp" alt="Folha de trabalho: o seu plano de importação" loading="lazy" draggable="false"><div class="veil"><span class="lk">🔒 Resto da página bloqueado</span><div class="slide" role="button" tabindex="0" aria-label="Deslize para desbloquear"><i></i><span>Deslize para desbloquear</span></div></div></div><figcaption>O seu plano de importação</figcaption></figure>
   </div>
 </div></section>
 
@@ -126,4 +126,5 @@
 (function(){var s=document.getElementById('sticky'),m=document.getElementById('mainCta'),f=document.getElementById('finalCta'),ms=true,fs=false,p=false;
 function u(){s.classList.toggle('show',p&&!ms&&!fs);document.body.classList.toggle('has-sticky',p)}
 if('IntersectionObserver' in window){new IntersectionObserver(function(e){ms=e[0].isIntersecting;if(!ms)p=true;u()}).observe(m);new IntersectionObserver(function(e){fs=e[0].isIntersecting;u()}).observe(f)}else{s.classList.add('show')}})();</script>
+<script src="lock.js"></script>
 </body></html>

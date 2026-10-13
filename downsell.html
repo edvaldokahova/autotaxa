@@ -10,6 +10,7 @@
   <link rel="apple-touch-icon" href="/favicon.png">
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="extra.css">
+  <link rel="stylesheet" href="down.css">
   <!-- Meta Pixel (apenas carregamento + PageView; os eventos de conversão vêm da plataforma de checkout) -->
   <script>
   !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
@@ -22,91 +23,48 @@
 </head>
 <body>
 
-<div class="ds-banner">⚠️ ESPERE! NÃO FECHE ESTA PÁGINA</div>
+<div class="ds-banner" id="dsBanner">⚠️ ESPERE! ACHAMOS A MELHOR OFERTA PARA SI</div>
 
-<main class="hero">
-  <div class="wrap wide">
-    <div class="wrap" style="padding:0">
-      <span class="eyebrow">Oferta exclusiva desta página</span>
-      <h1>Leve a <mark>AutoTaxa Pro 2026</mark> por 7.900 Kz <span class="soft">e saiba o custo real antes de pagar a viatura</span></h1>
-      <p class="sub">A mesma planilha completa, pronta a usar, com um guia de utilização dentro dela. Você preenche, ela calcula.</p>
+<main class="hero ds-simple">
+  <div class="wrap">
 
-      <div class="price-box">
-        <div class="old">Preço normal: <s>12.997 Kz</s></div>
-        <div class="big">7.900 Kz</div>
-        <span class="save">Poupa 5.097 Kz · pagamento único</span>
+    <!-- Estado 1: oferta ativa (5 minutos) -->
+    <section id="offer">
+      <span class="eyebrow">Oferta segura exclusiva desta página</span>
+
+      <div class="timer" role="timer" aria-live="off">
+        <span class="timer-lbl">Esta oferta fecha em</span>
+        <b id="clock">05:00</b>
+        <div class="timer-bar"><i id="bar"></i></div>
       </div>
+
+      <h1>AutoTaxa Pro 2026 por <mark>7.900 Kz</mark></h1>
+      <p class="sub">É a mesma planilha que acabou de ver, em vez de <s>12.997 Kz</s>. Só está disponível aqui e só até o cronómetro chegar a zero.</p>
 
       <a class="btn" href="https://okandapay.com/checkout/planilha-calculadora-de-importacao-de-viaturas-autotaxa-essencial-muynt6mz?pid=855c6dbd-5912-4ccf-81ba-e6af01ade519">
         SIM, QUERO POR 7.900 Kz
-        <span>Acesso digital imediato · Garantia de 7 dias</span>
+        <span>Acesso digital imediato</span>
       </a>
-    </div>
 
-    <div class="shots">
-      <figure class="full">
-        <img src="assets/v2/laptop.webp" alt="AutoTaxa Pro no computador portátil" loading="lazy">
-        <figcaption>A planilha no computador</figcaption>
-      </figure>
-      <figure>
-        <img src="assets/v2/phone.webp" alt="AutoTaxa Pro no telemóvel" loading="lazy" style="max-width:230px;margin:0 auto;background:none">
-        <figcaption>No telemóvel</figcaption>
-      </figure>
-    </div>
+      <ul class="safe">
+        <li><b>Pagamento seguro</b> processado pela StanderPay</li>
+        <li><b>Garantia de 7 dias:</b> se não gostar, devolvemos o valor</li>
+        <li><b>Pagamento único.</b> Sem mensalidades nem taxas escondidas</li>
+      </ul>
 
-    <div class="wrap" style="padding:0">
-      <div class="callout">Um erro de apenas <b>5%</b> no custo final de uma viatura de 9,3 milhões Kz são <b>465.000 Kz</b>. A planilha custa menos de 0,1% desse valor.</div>
+      <!-- Quem recusa vai para a página da AutoTaxa Mini -->
+      <a class="nothanks" href="mini.html">Não, obrigado. Quero só a versão gratuita.</a>
+    </section>
 
-      <h2 style="text-align:center;font-size:1.3rem;margin-top:22px">Fácil de usar, em 3 passos</h2>
-      <ol class="steps">
-        <li><b>Escolha a viatura</b><span>Novo ou usado, ligeiro ou pesado, uso próprio ou revenda.</span></li>
-        <li><b>Preencha as células azuis</b><span>Preço FOB, frete, seguro e câmbio.</span></li>
-        <li><b>Veja o custo final em Kwanzas</b><span>O guia de utilização está dentro da própria planilha.</span></li>
-      </ol>
+    <!-- Estado 2: oferta terminada (a oferta deixa de existir nesta página) -->
+    <section id="closed" hidden>
+      <span class="eyebrow closed-tag">Oferta encerrada</span>
+      <h1>O tempo desta oferta terminou</h1>
+      <p class="sub">O preço de 7.900 Kz já não está disponível nesta página. Escolha como quer continuar:</p>
+      <a class="btn" href="index.html">VOLTAR À PÁGINA PRINCIPAL<span>Ver a AutoTaxa Pro</span></a>
+      <a class="btn ghost" href="mini.html">BAIXAR A AUTOTAXA MINI<span>Versão gratuita, estimativa simples</span></a>
+    </section>
 
-      <div class="box">
-        <h2>O que a planilha calcula para si</h2>
-        <ul class="list">
-          <li>Valor CIF a partir do FOB, frete e seguro, em dólares e em Kwanzas</li>
-          <li>Direitos aduaneiros, IEC, taxa estatística, imposto de selo e IVA</li>
-          <li>Honorários do despachante e taxas portuárias</li>
-          <li>Custo final e preço de venda sugerido com a sua margem de revenda</li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="compare">
-      <div class="box hl">
-        <span class="tag">Esta oferta</span>
-        <h2>7.900 Kz</h2>
-        <ul class="list">
-          <li>Planilha AutoTaxa Pro 2026 completa</li>
-          <li>Guia de utilização dentro da planilha</li>
-          <li>Garantia de reembolso de 7 dias</li>
-          <li class="no">Suporte no WhatsApp para dúvidas de utilização</li>
-        </ul>
-      </div>
-      <div class="box">
-        <span class="tag">Preço normal</span>
-        <h2>12.997 Kz</h2>
-        <ul class="list">
-          <li>Planilha AutoTaxa Pro 2026 completa</li>
-          <li>Guia de utilização dentro da planilha</li>
-          <li>Garantia de reembolso de 7 dias</li>
-          <li>Suporte no WhatsApp para dúvidas de utilização</li>
-        </ul>
-      </div>
-    </div>
-    <p class="diff-note">É a mesma planilha. Nesta oferta resolve com o guia incluído; no preço normal pode também tirar dúvidas connosco no WhatsApp.</p>
-
-    <div class="wrap" style="padding:0;margin-top:22px">
-      <a class="btn" href="https://okandapay.com/checkout/planilha-calculadora-de-importacao-de-viaturas-autotaxa-essencial-muynt6mz?pid=855c6dbd-5912-4ccf-81ba-e6af01ade519">
-        QUERO A AUTOTAXA PRO POR 7.900 Kz
-        <span>Preço exclusivo desta página · Pagamento seguro</span>
-      </a>
-      <!-- Altere o href abaixo se quiser enviar quem recusa para outra página -->
-      <a class="nothanks" href="index.html">Não, obrigado. Vou continuar sem calcular o custo real.</a>
-    </div>
   </div>
 </main>
 
@@ -121,6 +79,30 @@
     <p>© <span id="year">2026</span> A Bilonai Group. Todos os direitos reservados.</p>
   </div>
 </footer>
-<script>document.getElementById('year').textContent=new Date().getFullYear()</script>
+<script>
+document.getElementById('year').textContent=new Date().getFullYear();
+(function(){
+  var TOTAL=5*60*1000, KEY='autotaxa_ds_deadline';
+  var offer=document.getElementById('offer'), closed=document.getElementById('closed'),
+      clock=document.getElementById('clock'), bar=document.getElementById('bar'), banner=document.getElementById('dsBanner');
+  function get(){try{return localStorage.getItem(KEY)}catch(e){return null}}
+  function set(v){try{localStorage.setItem(KEY,v)}catch(e){}}
+  // ?reset=1 -> recomeça o cronómetro (para testar)
+  if(/[?&]reset=1/.test(location.search)){try{localStorage.removeItem(KEY)}catch(e){}}
+  var deadline=parseInt(get(),10);
+  if(!deadline){deadline=Date.now()+TOTAL;set(String(deadline));}
+  function close(){offer.hidden=true;closed.hidden=false;banner.textContent='OFERTA ENCERRADA';banner.classList.add('off');document.title='Oferta encerrada · AutoTaxa';}
+  function tick(){
+    var left=deadline-Date.now();
+    if(left<=0){close();return true;}
+    var s=Math.ceil(left/1000), m=Math.floor(s/60), r=s%60;
+    clock.textContent=(m<10?'0':'')+m+':'+(r<10?'0':'')+r;
+    bar.style.width=Math.max(0,Math.min(100,left/TOTAL*100))+'%';
+    document.body.classList.toggle('urgent',left<60000);
+    return false;
+  }
+  if(!tick()){var iv=setInterval(function(){if(tick())clearInterval(iv)},250);}
+})();
+</script>
 </body>
 </html>

